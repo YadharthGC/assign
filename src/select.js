@@ -26,7 +26,10 @@ function Select() {
 
   let fetcha = async () => {
     try {
-      let get = await axios.post("http://localhost:3002/select", { did });
+      let get = await axios.post(
+        "https://yadharthassign.herokuapp.com/select",
+        { did }
+      );
     } catch (error) {
       console.log(error);
       console.log("error3");
@@ -34,7 +37,7 @@ function Select() {
   };
   let fetchb = async () => {
     try {
-      let get = await axios.get("http://localhost:3002/current");
+      let get = await axios.get("https://yadharthassign.herokuapp.com/current");
       setsdata([...get.data[0].final]);
       console.log(get);
       setload(false);
@@ -47,7 +50,7 @@ function Select() {
   let posts = async (data) => {
     try {
       navigate("/", { replace: true });
-      let post = await axios.post("http://localhost:3002/idb", {
+      let post = await axios.post("https://yadharthassign.herokuapp.com/idb", {
         did,
         data,
       });

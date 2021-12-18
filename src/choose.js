@@ -17,13 +17,16 @@ function Choose() {
   let posta = async (mentor) => {
     try {
       navigate("/", { replace: true });
-      let post = await axios.post("http://localhost:3002/id", { did, mentor });
+      let post = await axios.post("https://yadharthassign.herokuapp.com/id", {
+        did,
+        mentor,
+      });
     } catch (error) {}
   };
 
   let fetchb = async () => {
     try {
-      let get = await axios.get("http://localhost:3002/mentors");
+      let get = await axios.get("https://yadharthassign.herokuapp.com/mentors");
       setmdata([...get.data]);
     } catch (error) {
       console.log(error);

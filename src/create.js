@@ -23,7 +23,10 @@ function Create() {
     try {
       e.preventDefault();
       setstudent([]);
-      let post = await axios.post("http://localhost:3002/student", { student });
+      let post = await axios.post(
+        "https://yadharthassign.herokuapp.com/student",
+        { student }
+      );
     } catch (error) {
       console.log(error);
       console.log("error1");
@@ -33,7 +36,10 @@ function Create() {
     try {
       i.preventDefault();
       setmentor([]);
-      let post = await axios.post("http://localhost:3002/mentor", { mentor });
+      let post = await axios.post(
+        "https://yadharthassign.herokuapp.com/mentor",
+        { mentor }
+      );
     } catch (error) {
       console.log(error);
       console.log("error2");
